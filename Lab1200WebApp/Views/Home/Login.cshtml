@@ -1,0 +1,114 @@
+﻿@page
+@using Lab1200WebApp.Views.Home
+@model LoginModel
+@{
+}
+
+<style type="text/css">
+    body {
+        color: #fff;
+        font-family: "微软雅黑";
+        font-size: 14px;
+        background: url('https://dn-coding-net-production-pp.qbox.me/96ec8cc7-0e5f-4217-b853-4a88c15579f3.png') no-repeat;
+    }
+    .p-font-size {
+        font-size: 16pt;
+    }
+    .wrap1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        height: 600px;
+    }
+    /*把整个屏幕真正撑开--而且能自己实现居中*/
+    .main_content {
+        background: url(https://dn-coding-net-production-pp.qbox.me/2ed70a05-04ad-4ccf-81d4-bc1fad2b6e41.png) repeat;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        float: none;
+        border-radius: 8px;
+        padding: 10px
+    }
+
+    .form-group {
+        position: relative;
+    }
+
+    .login_btn {
+        display: block;
+        background: #3872f6;
+        color: #fff;
+        font-size: 15px;
+        width: 100%;
+        line-height: 50px;
+        border-radius: 3px;
+        border: none;
+    }
+
+    .login_input {
+        width: 100%;
+        border: 1px solid #3872f6;
+        border-radius: 3px;
+        line-height: 40px;
+        padding: 2px 5px 2px 30px;
+        background: none;
+    }
+
+    .icon_font {
+        position: absolute;
+        top: 12px;
+        left: 10px;
+        font-size: 18px;
+        color: #3872f6;
+    }
+
+    .font16 {
+        font-size: 16px;
+    }
+
+    .mg-t20 {
+        margin-top: 20px;
+    }
+
+    #grad {
+        background: -webkit-linear-gradient(#4990c1, #52a3d2, #6186a3); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(#4990c1, #52a3d2, #6186a3); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(#4990c1, #52a3d2, #6186a3); /* Firefox 3.6 - 15 */
+        background: linear-gradient(#4990c1, #52a3d2, #6186a3); /* 标准的语法 */
+    }
+    /*==jquery.validate css==*/
+    .field-validation-error {
+        color: #e14430 !important;
+        padding-top: 5px;
+    }
+
+    .input-validation-error {
+        border-color: #d38e99;
+    }
+</style>
+
+<div class="container wrap1">
+    <h2 class="mg-b20 text-center">用户管理</h2>
+    <div class="col-sm-8 col-md-5 center-auto pd-sm-50 pd-xs-20 main_content">
+        <form class="mg-t20">
+            <div class="form-group mg-t20">
+                <i class="icon_font glyphicon glyphicon-user"></i>
+                <input type="text" class="login_input" placeholder="请输入用户名" autofocus />
+            </div>
+            <div class="form-group mg-t20">
+                <i class="icon_font glyphicon glyphicon-lock"></i>
+                <input type="password" class="login_input" placeholder="请输入密码" />
+            </div>
+            <div class="checkbox mg-b25">
+                <label>
+                    <input type="checkbox">记住我的登录信息
+                </label>
+            </div>
+            <button class="login_btn" asp-controller="Home" asp-action="Index">登 录</button>
+        </form>
+    </div>
+</div>

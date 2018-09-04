@@ -1,0 +1,52 @@
+﻿@page
+@using Lab1200WebApp.Views.Home
+@model ExpGuideModel
+@{
+}
+
+<style>
+    .weight_center{
+        align-content:center;
+        align-self:center;
+    }
+</style>
+
+<h2>实验指导书</h2>
+
+<style>
+    div.polaroid {
+        width: 100%;
+        margin: 10px;
+        padding: 10px;
+        background-color: lightcyan;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px rgba(0, 0, 0, 0.19);
+        margin-bottom: 25px;
+    }
+
+    div.card-container {
+        text-align: center;
+        padding: 10px 20px;
+    }
+
+    .p-font-size {
+        font-size: 16pt;
+    }
+</style>
+
+<div id="pdf1" class="polaroid">
+    <a href="~/pdfs/exp_guide.pdf"><b>点击在线预览pdf</b></a>
+    <h2>实验指导书目录</h2>
+    <ul>
+        <li class="p-font-size">飞行器航电基础实验攻防模拟平台概述</li>
+        <li class="p-font-size">实验1 Simulink飞行器电子系统模块搭建</li>
+        <li class="p-font-size">实验2 航电仪表熟悉与操作</li>
+        <li class="p-font-size">实验3 EH101直升机任务飞行</li>
+        <li class="p-font-size">实验4 单兵便携式防空导弹性能分析</li>
+        <li class="p-font-size">实验5 EH101直升机与单兵攻防对抗</li>
+        <li class="p-font-size">实验6 初教6与F18任务飞行</li>
+        <li class="p-font-size">实验7 两型战斗机的攻防演练</li>
+    </ul>
+</div>
+<div>
+    <img src="~/images/guide.png" alt="Guide Book" class="weight_center" />
+</div>

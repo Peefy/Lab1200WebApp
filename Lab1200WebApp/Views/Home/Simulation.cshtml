@@ -1,0 +1,222 @@
+﻿
+@page
+@using Lab1200WebApp.Views.Home
+@model SimulationModel
+
+@{
+    var models = new List<SimulationViewModel>();
+    models.Add(new SimulationViewModel()
+    {
+        Title = "实验一：航电系统Simulink搭建",
+        SubTitles = new List<string>
+{
+"1.	通信链路建模与仿真",
+"2.	高度表建模与仿真",
+"3.	飞行器控制系统与仿真",
+},
+    });
+    models.Add(new SimulationViewModel()
+    {
+        Title = "实验二：典型飞行器航电仪表与基本操作",
+        SubTitles = new List<string>
+{
+"1.	EH101型直升机仪表与操作",
+"2.	初教6仪表与操作",
+"3.	F18战斗机仪表与操作",
+},
+    });
+    models.Add(new SimulationViewModel()
+    {
+        Title = "实验三：飞行驾驶方法",
+        SubTitles = new List<string>
+{
+"1.	通信链路建模与仿真",
+"2.	高度表建模与仿真",
+"3.	飞行器控制系统与仿真",
+},
+    });
+    models.Add(new SimulationViewModel()
+    {
+        Title = "实验四：基本飞行任务-EH101 ",
+        SubTitles = new List<string>
+{
+"1.	驾驶EH101起飞",
+"2.	掌握爬升与下降",
+"3.	驾驶EH101降落",
+"4.	使用导航显示系统"
+},
+    });
+    models.Add(new SimulationViewModel()
+    {
+        Title = "实验五：初教6与F18任务飞行",
+        SubTitles = new List<string>
+{
+"1.	起落航线-五边飞行",
+"2.	斤斗飞行",
+"3.	盘旋飞行",
+"4.	编队飞行"
+},
+    });
+    models.Add(new SimulationViewModel()
+    {
+        Title = "实验六：单兵便携式防空导弹使用方法",
+        SubTitles = new List<string>
+{
+"1.	导引率：比例法、平行渐进法、三点法、追踪法介绍",
+"2.	参数设置：风速、能见度、传动比系数",
+"3.	导弹打靶练习",
+},
+    });
+    models.Add(new SimulationViewModel()
+    {
+        Title = "实验七：EH101直升机与单兵对抗",
+        SubTitles = new List<string>
+{
+"1.	EH101直升机任务",
+"2.	单兵任务",
+"3.	攻守方对抗",
+},
+    });
+    models.Add(new SimulationViewModel()
+    {
+        Title = "实验八：多机型攻防演练",
+        SubTitles = new List<string>
+{
+"1.	攻方任务",
+"2.	守方任务",
+"3.	攻守方对抗",
+},
+    });
+}
+<style>
+    .font-16 {
+        font-size: 18pt;
+    }
+
+    .font-14 {
+        font-size: 15pt;
+    }
+</style>
+<style>
+    div.polaroid {
+        width: 100%;
+        margin: 10px;
+        padding: 10px;
+        background-color: lightsalmon;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px rgba(0, 0, 0, 0.19);
+        margin-bottom: 25px;
+    }
+
+    div.content-text {
+        width: 100%;
+        margin: 10px;
+        padding: 10px;
+        background-color: lightsalmon;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px rgba(0, 0, 0, 0.19);
+        margin-bottom: 25px;
+    }
+
+    div.card-container {
+        text-align: center;
+        padding: 10px 20px;
+    }
+
+    p {
+        font-size: 15pt;
+    }
+
+    .p-font-size {
+        font-size: 16pt;
+    }
+
+    .subsection {
+        font-size: 18pt;
+    }
+</style>
+
+<h2><b>线上实验教程</b></h2>
+<h3><b>第一步 FlightGear模拟飞行软件和Lab1200Plugin插件环境配置</b></h3>
+<ul>
+    <li class="subsection">
+        <b>FlightGear模拟飞行软件</b>
+    </li>
+    <div class="">
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FlightGear是一个开源飞行模拟器。
+            它支持各种流行的平台（Windows，Mac，Linux等），
+            由来自世界各地的熟练志愿者开发。 整个项目的源代码可通过GNU通用公共许可证获得并获得许可。
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FlightGear项目的目标是创建一个复杂和
+            开放的飞行模拟器框架，用于研究或学术环境，飞行员培训，作为一种行业工程工具，让DIY用
+            户追求他们最喜欢的有趣飞行模拟理念，并持续但肯定 尤其是作为一款有趣，
+            逼真且具有挑战性的桌面飞行模拟器。 我们正在开发一个复杂，开放的模拟框架，
+            任何有兴趣贡献的人都可以对其进行扩展和改进。
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="http://home.flightgear.org/" target="_blank">FlightGear官方链接</a>
+        </p>
+    </div>
+    <li class="subsection">
+        <b>Lab1200Plugin插件</b>
+    </li>
+    <div>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Lab1200Plugin插件是航电实验室主持开发的FlightGear模拟飞行软件，可以在连接外网的情况下，
+            实时从FlightGear本地以太网UDP通信接口中读取模拟飞机的的导航数据、姿态数据、仪表数据并上传到
+            在线实验系统当中供记录和评价使用
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://peefy.github.io/" target="_blank">Lab1200Plugin插件下载链接</a>
+        </p>
+    </div>
+</ul>
+
+
+<h3><b>第二步 登录账号开始模拟飞行</b></h3>
+<p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    准备好FlightGear模拟飞行软件和在Lab1200Plugin插件登录成功后，
+    就可以在模拟飞行软件中用于编队飞行或空中交通管制模拟。
+</p>
+
+<h3><b>第三步 查询飞行数据和评价</b></h3>
+<p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    模拟飞行完成后，可以在在线页面中查询并记录自己的飞行数据；
+    如果选择了指定科目进行练习，还可以从在线系统中获得该次练习
+    的飞行评价，用于指导更好地科目练习飞行
+</p>
+
+<h2><b>教学实验过程</b></h2>
+<ul>
+    @{
+        for (var i = 0; i < models.Count; ++i)
+        {
+            var mod = models[i];
+            <div class="polaroid">
+                <li class="font-16"><b>@mod.Title</b></li>
+
+                <ul>
+                    @for (var j = 0; j < mod.SubTitles.Count; ++j)
+                    {
+                        var sub = mod.SubTitles[j];
+                        <li class="font-14">
+                            @sub.ToString()<br />
+                        </li>
+                    }
+                </ul>
+            </div>
+            var url = $"~/videos/{i}.Ogg";
+            <video width="640" height="480" controls style="margin-top:-30px;margin-left:120px">
+                @if (i < 7)
+                {
+                    @Html.Raw($"<source src=\"../videos/{i + 1}.Ogg\" >")
+                }
+            </video>
+        }
+    }
+</ul>

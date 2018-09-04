@@ -1,0 +1,77 @@
+﻿
+@page
+@using Lab1200WebApp.Views.Home
+@model FeedBackModel
+@{
+}
+<h2>在线反馈</h2>
+<style>
+    input.list[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px border-style #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+
+    input.list[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width:100%
+    }
+
+    .login_btn {
+        display: block;
+        background: #3872f6;
+        color: #fff;
+        font-size: 15px;
+        width: 100%;
+        line-height: 50px;
+        border-radius: 3px;
+        border: none;
+    }
+
+        input.list[type=submit]:hover {
+            background-color: #45a049;
+        }
+    .p-font-size {
+        font-size: 16pt;
+    }
+    .feed-container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+</style>
+<div class="feed-container">
+    <form action="">
+        <label for="cname">姓名</label>
+        <input class="list" type="text" id="cname" name="cname" placeholder="请输入姓名..">
+
+        <label for="cname">学号</label>
+        <input class="list" type="text" id="cname" name="cname" placeholder="请输入学号..">
+
+        <label for="email">邮箱</label>
+        <input class="list" type="text" id="email" name="email" placeholder="请输入邮箱..">
+
+        <label for="country">反馈主题</label>
+        <select id="country" name="country">
+            <option value="australia">线上实验部分</option>
+            <option value="canada">线下实验部分</option>
+            <option value="usa">Simulink部分</option>
+        </select>
+
+        <label for="subject">反馈信息</label>
+        <textarea id="subject" name="subject" placeholder="反馈内容..（不超过300字）" style="height:200px"></textarea>
+
+        <input class="list" type="submit" value="提交">
+    </form>
+</div>
+

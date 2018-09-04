@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "主页";
+}
+
+<style>
+    div.polaroid {
+        width: 100%;
+        margin:10px;
+        padding: 10px;
+        background-color: lightblue;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px rgba(0, 0, 0, 0.19);
+        margin-bottom: 25px;
+    }
+    .p-font-size {
+        font-size: 16pt;
+    }
+    div.card-container {
+        text-align: center;
+        padding: 10px 20px;
+    }
+</style>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000" style="margin:10px">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="~/images/vr_all.png" alt="VR All" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>虚拟现实多方攻防系统</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/images/ec135_all.png" alt="EC135 All" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>EC135直升机模拟器</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/images/visit_all.png" alt="Visit All" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>飞行员班实验教具</p>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div >
+    <div class="polaroid">
+        <h2><b>航电实验室简介</b></h2>
+        <p class="p-font-size">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            清华大学航空宇航电子系统实验室（1200实验室）隶属于清华大学航天航空学院航空宇航工程系，
+            主要面向飞行器（航空器和航天器）及其配套设备的电子系统（简称“航电”）前沿课题的研究工作，
+            研究内容涵盖航空航天通信系统、飞行器导航系统、飞行器控制与制导系统、飞行器任务管理系统、
+            飞行器遥感与探测、飞行器仪表与电磁兼容性分析等。实验室紧密结合我国发展航空宇航技术的需求
+            以及未来信息技术的发展趋势，在面向航空宇航应用的通信、导航、识别、监视、控制等一些重要
+            的研究领域开展了相关科研工作。实验室不仅承担了国家重大专项、863等课题任务，而且负责国
+            家基金类课题航空电子基础理论的研究工作，主要研究方向包括：航空航天宽带无线通信、协同探
+            测与协同导航、网络通信与控制一体化、飞行器协同自主控制等。
+        </p>
+        <p class="p-font-size">
+            &nbsp;&nbsp;&nbsp;&nbsp;随着飞行器电子系统在飞行器造价中的不断提高，航电系统的设计已经成为飞行器设计的重要组成部分，
+            航电课程也成为飞行器设计专业和空天信息专业必修的重要学位课程，为了进一步加强航空宇航科学技术
+            学科建设，完善飞行器设计和空天信息专业课程体系，实验室规划和开设了《飞行器电子系统》（48学时）、
+            《飞行器制导导航与控制》（48学时）、《航天航空通信工程》（32学时）、《航电理论基础》（32学时）
+            等课程，并正在完成相应讲义和教材的整理工作。
+        </p>
+        <p class="p-font-size">
+            &nbsp;&nbsp;&nbsp;&nbsp;清华大学航空宇航电子系统实验室成立以来得到了航院的大力支持，并与清华大学其他相关实验室建立了
+            良好的协作关系，包括：电子系微波与数字通信国家重点实验室、自动化系导航中心、宇航技术研究中心、
+            航空技术研究中心等。为了与国际一流的航电方向前沿研究接轨，实验室不仅与国家重要航空航天相关单
+            位建立合作关系，而且与国内外著名大学和研究机构保持相应的学术交流，包括：美国NASA JPL，欧空局ESA，
+            美国Georgia Tech，Standford，Ohio Univ., 德国慕尼黑工大、DLR（德国空间中心）、法国SAFRAN、
+            日本航法研究所、北航新航行系统实验基地等。
+        </p>
+    </div>
+    <br/>
+    <div >
+        <h2>实验室网站</h2>
+        <p><a href="http://101.6.32.202" target="_blank">实验室网站链接</a></p>
+    </div>
+</div>

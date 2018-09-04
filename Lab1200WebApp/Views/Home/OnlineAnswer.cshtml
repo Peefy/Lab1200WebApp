@@ -1,0 +1,242 @@
+﻿
+@page
+@using Lab1200WebApp.Views.Home
+@model OnlineAnswerModel
+@{
+    var section1name = "飞行器基础知识";
+    var section2name = "飞行基本知识";
+    var questions1 = new List<QuestionViewModel>()
+{
+new QuestionViewModel()
+{
+Questions = "1.	飞机上的黑匣子一般安装在（）",
+Answers = new List<string>
+{
+"A.飞机中部",
+"B.飞机机尾下方",
+"C.机身",
+"D.机翼中"
+},
+RightAnswerIndex = 1,
+},
+new QuestionViewModel()
+{
+Questions = "2.	黑匣子的颜色为（）",
+Answers = new List<string>
+{
+"A.红色",
+"B.黄色",
+"C.黑色",
+"D.橘红色"
+},
+RightAnswerIndex = 3,
+},
+new QuestionViewModel()
+{
+Questions = "3.	尾翼的作用（）",
+Answers = new List<string>
+{
+"A.控制飞机的倾转 ",
+"B.控制飞机的俯仰",
+"C.提供升力 ",
+"D.保证飞机在飞行过程中的平衡作用"
+},
+RightAnswerIndex = 3,
+},
+new QuestionViewModel()
+{
+Questions = "4.	使飞机在起飞和降落时速度较低而又要保持升力在机翼上增加的活动翼面是（）",
+Answers = new List<string>
+{
+"A.副翼",
+"B.缝翼",
+"C.襟翼",
+"D.主翼"
+},
+RightAnswerIndex = 2,
+},
+new QuestionViewModel()
+{
+Questions = "5.	发动机的布置方式是（）",
+Answers = new List<string>
+{
+"A.尾吊布局",
+"B.地平仪",
+"C.尾吊装置",
+"D.混合布局"
+},
+RightAnswerIndex = 0,
+}
+};
+
+    var questions2 = new List<QuestionViewModel>()
+{
+new QuestionViewModel()
+{
+Questions = "1.	空中交通管理的发展历程是（）",
+Answers = new List<string>
+{
+"A.目视飞行规则—反表飞行规则—雷达管制—ILS",
+"B.目视飞行规则—反表飞行规则—ILS—雷达管制",
+"C.目视飞行规则—ILS—仪表飞行规则—雷达管制",
+"D.仪表飞行规则—目视飞行规则—雷达管制—ILS"
+},
+RightAnswerIndex = 0,
+},
+new QuestionViewModel()
+{
+Questions = "2.	飞机在那个圈层内飞行最安全（）",
+Answers = new List<string>
+{
+"A.对流层",
+"B.平流层",
+"C.中间层",
+"D.散逸层"
+},
+RightAnswerIndex = 1,
+},
+new QuestionViewModel()
+{
+Questions = "3.	最高级别的检修是指（）",
+Answers = new List<string>
+{
+"A.中检",
+"B.C检",
+"C.D检",
+"D.A检"
+},
+RightAnswerIndex = 2,
+},
+new QuestionViewModel()
+{
+Questions = "4.	气温随温度高度的增加而增加的是大气层中的（）",
+Answers = new List<string>
+{
+"A.对流层",
+"B.中间层",
+"C.平流层",
+"D.散逸层"
+},
+RightAnswerIndex = 2,
+},
+new QuestionViewModel()
+{
+Questions = "5.	我国适航组织体系分为以下哪个等级（）",
+Answers = new List<string>
+{
+"A.6",
+"B.3",
+"C.5",
+"D.4"
+},
+RightAnswerIndex = 1,
+}
+};
+}
+
+<h2><b>@section1name</b></h2>
+<div style="margin:10px;font-size:16pt">
+
+    @foreach (var q in questions1)
+    {<div class="polaroid">
+            <form action="" method="get">
+                <i>@q.Questions</i><br />
+                @foreach (var ans in q.Answers)
+                {
+                    <label><input name="Fruit" type="radio" value="" />&nbsp;&nbsp;@ans </label><br />
+                }
+            </form>
+        </div>
+    }
+
+</div>
+
+<h2><b>@section2name</b></h2>
+
+<style>
+    div.polaroid {
+        width: 600px;
+        padding : 10px;
+        background-color: lightyellow;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px rgba(0, 0, 0, 0.19);
+        margin-bottom: 25px;
+    }
+
+    div.card-container {
+        text-align: center;
+        padding: 10px 20px;
+    }
+</style>
+
+<div style="margin:10px;font-size:16pt">
+    
+        @foreach (var q in questions2)
+        {<div class="polaroid">
+    <form action="" method="get">
+        <i>@q.Questions</i><br />
+        @foreach (var ans in q.Answers)
+        {
+            <label><input name="Fruit" type="radio" value="" />&nbsp;&nbsp;@ans </label><br />
+        }
+    </form>
+</div>
+        }
+    
+</div>
+
+
+<button class="button-trans" id="submit" style="vertical-align:middle">
+    <span>提交答案 </span>
+</button>
+<style>
+    .button-trans {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #f4511e;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .p-font-size {
+        font-size: 16pt;
+    }
+
+        .button-trans span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+            .button-trans span:after {
+                content: '»';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+
+        .button-trans:hover span {
+            padding-right: 25px;
+        }
+
+        .button-trans:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+</style>
+
+<script>
+    var btn = document.getElementById("submit");
+    btn.onclick = function () {
+        alert("未做完全部试题，请全部完成后再次提交答案！");
+    }
+</script>
