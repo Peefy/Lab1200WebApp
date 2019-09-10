@@ -16,7 +16,6 @@ namespace Lab1200WebApp.Controllers
         {
             return View();
         }
-
     }
 
     public class HomeController : Controller
